@@ -1,0 +1,55 @@
+
+.toggler-sx-nav{
+    display: none ;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.toggler-md-navbar{
+    display: flex;
+}
+
+@media (max-width: 980px) {
+  .toggler-md-navbar li:nth-child(2){
+    display: none;
+  }
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media (max-width: 768px) {
+  .appInfo .section ul {
+    display: block !important;
+  }
+  .rightMenu{
+    display: none;
+  }
+  .toggler-sx-nav{
+    display: block ;
+  }
+  .toggler-md-navbar{
+      display: none !important;
+  }
+  .header .container{
+    margin: 0;
+  }
+  .appItems .item .card{
+    height: 220px !important;
+  }
+  .appItems .container{
+    margin: 0;
+    max-width: inherit !important;
+  }
+  .appItems .container .row{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .appItems .item .card{
+    margin-bottom: 10px;
+  }
+  .appItemsList .authors{
+    display: none;
+  }
+}

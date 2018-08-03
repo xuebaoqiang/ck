@@ -1,0 +1,472 @@
+
+li{
+  list-style: none;
+}
+ul{
+  margin: 0; padding: 0;
+}
+
+.logo{
+  width: 28px; height: 28px;
+  margin-right: 5px;
+}
+
+@keyframes messAnim {
+  0%{}
+  100%{ transform: translateY(-999px);}
+}
+
+@keyframes -webkit-messAnim {
+  0%{}
+  100%{ -webkit-transform: translateY(-999px);}
+}
+
+.messages{
+  position: fixed;top: 0; left: 0; width: 100%; height: 0; z-index: 1; text-align: center;
+  animation: messAnim 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+.messages li{ display: inline-block; border-radius: 5px; background: #dff0d8; padding: 10px 20px; margin: 10px; margin-top: 6px;}
+
+/* debug */
+.message-status-10{ background: #D9EDF7 !important; border: 1px solid #ccc; color: #3c763d }
+/* INFO */
+.message-status-20{ background: #dff0d8 !important; border: 1px solid #ccc; color: #3c763d}
+/* SUCCESS */
+.message-status-25{ background: #b6fc94 !important; border: 1px solid #ccc; color: #31708f}
+/* warnign */
+.message-status-30{ background: #fcf8e3 !important; border: 1px solid #ccc; color: #8a6d3b; }
+/* error */
+.message-status-40{ background: #f2dede !important; border: 1px solid #ccc; color: #a94442; }
+
+
+
+.header {}
+.header ul.navbar-nav{
+  float: right !important;
+  color: #fff;
+  justify-content: center;
+  flex-direction: row;
+}
+.header ul.navbar-nav a{
+  color: #fff;
+  margin: 0 10px;
+}
+.header ul.navbar-nav a:hover{
+  text-decoration: none;
+}
+.header .query{
+  position: relative;
+}
+.header .query:hover input[class*=btn-primary]{
+  opacity: 1;
+}
+.header .query input[class*=btn-primary]{
+  position: absolute; top: 0; right: 0;
+  opacity: 0; transition: all .2s ease;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+button:focus, input:focus{
+  outline: none !important;
+}
+/* .header .navbar-collapse ul li{
+  display: inline-block;
+} */
+.search{
+  text-align: center;
+  border: 1px solid #ccc !important;
+}
+.search:focus{
+  border-color: #0184E5 !important
+}
+.search-container{
+  display: none;
+}
+.toggler-md-navbar li button:focus{
+  outline: none;
+  opacity: .5;
+}
+.toggler-md-navbar li button, .toggler-md-navbar li .submit-myApp{
+  background: transparent;
+  color: #0B8BEA;
+  border: none;
+  border-bottom: 1px solid #0B8BEA;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 6px 10px;
+  box-sizing: border-box !important;
+  cursor: pointer;
+}
+.submit-myApp{
+  background: #0B8BEA !important;
+  color: #fff !important;
+  border: 1px solid #fff;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 6px 10px;
+  box-sizing: border-box !important;
+  cursor: pointer;
+}
+
+
+.header .navbar-dark .navbar-brand{
+  color: #000;
+}
+.header .bg-dark{
+  background: #F8F9FA !important;
+}
+.apps .table  tr th div {
+  position: relative;
+  display: inline-block;
+}
+.apps .table  .dappfont{
+  position: absolute;
+  top: -2px;
+  right: -15px;
+}
+
+.appItems{
+  padding-top: 15px;
+}
+.appItems .list{
+  display: none;
+}
+.appItems .list {
+  font-size: 14px;
+}
+.appItems .map{
+  display: flex;
+}
+.appItemsList .list{
+  display: block !important;
+}
+.appItemsList .list td{
+  position: relative;
+  vertical-align: middle;
+}
+.appItemsList .list td img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+}
+.appItemsList .list .status{
+  padding: 1px 6px;
+  font-size: 12px;
+}
+.appItemsList .list .status:hover{
+  opacity: .8;
+}
+.appItemsList .map{
+  display: none;
+}
+/* .appItemsList .list .table{
+  display: block !important;
+} */
+.appItems .switchStyle{
+  text-align: right;
+  padding-bottom: 5px;
+}
+.appItems .switchStyle li{
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+}
+.appItems .switchStyle li i{
+  cursor: pointer;
+  padding-left: 10px;
+  display: inline-block;
+}
+.appItems .switchStyle li span{
+  font-size: 14px !important;
+  display: inline-block;
+}
+.appItems .switchStyle li:hover{
+  color: #000;
+}
+.appItems .switchStyle .dappfont{
+  font-size: 20px;
+}
+
+.appItems .list{
+  display: none;
+}
+.appItems .card-body .name p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.appItems .item{
+  margin: 0;
+  padding: 0 5px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.appItems .item .card{
+  height: 320px;
+  transition: all .2s;
+}
+.appItems .item a{
+  color: #000;
+}
+.appItems .item a:hover{
+  text-decoration: none !important;
+}
+.appItems .item .card .card-body{ display: flex; flex-direction: column; justify-content: space-around; position: relative; }
+.appItems .item .card:hover{ box-shadow: 0 0 15px #ccc}
+.appItems .item .card .card-body .new{ position: absolute; top: 0; left: 0; width: 30px; height: 30px;}
+.appItems .item .name{ text-align: center; }
+.appItems .item .name h4{ font-size: 22px; margin: 0; }
+.appItems .item .name p{ font-size: 14px; }
+.appItems .item .card-text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.appItems .item .card .card-body .btn:hover { background: #0B8BEA; }
+.appItems .item .status-content{
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; text-align: center; color: #000; height: 36px;
+  line-height: 36px; color: #333; font-size: 14px;
+}
+
+.appInfo { margin-top: 10px;}
+.appInfo .card{ background: #fff !important; position: relative; }
+.appInfo .card .card-body{ padding: 0;}
+.appInfo .card .title {padding: 1.5rem; padding-bottom: 1rem; overflow: hidden;}
+.appInfo .card .info{ padding: 1.5rem; padding-top: 0; }
+.appInfo .card .direction{ position: absolute; top: -38px; cursor: pointer; font-size: 22px;}
+.appInfo .card .direction:hover{ opacity: .7;}
+.appInfo .card .icon-zuoce{ left: 0}
+.appInfo .card .icon-fangxiang{ right: 0}
+.appInfo .submit-myApp { border: none; float: right;}
+.appInfo { position: relative; }
+.appInfo .new{ position: absolute; top: 0; left: 0; width: 30px; height: 30px;}
+.appInfo .status { position: relative; height: 42px; }
+.appInfo .status ul { position: absolute; top: 0; right: 0; }
+.appInfo .status ul li{ float: left; margin: 0 5px; }
+.appInfo .status ul li i { font-size: 18px; cursor: pointer; }
+.appInfo .status .dappfont{ font-size: 18px; }
+.appInfo .status ul li a { color: #000; text-decoration: none; }
+.appInfo .section ul { box-shadow: 0 0 5px #eee; }
+.appInfo .section .detail{
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+.appInfo .section .detail div{
+  padding: 0;
+  margin: 0;
+}
+.appInfo .section .detail table{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.appInfo .section .detail table tr:first-of-type td{
+  border: none;
+}
+.appInfo .section .detail .chart{
+  padding-left: 15px;
+  padding-bottom: 35px;
+}
+.appInfo .section .detail .chart .btn-group{
+
+}
+.appInfo .section .detail .chart .btn-group .btn{
+  background: #0B8BEA ;
+  border-color: #0B8BEA ;
+  border-radius: 0;
+}
+.appInfo .section .detail .chart .btn-group .active{
+  background: #fff !important;
+  color: #0B8BEA !important
+}
+.appInfo .section .detail #detailChart{
+  height: 300px;
+  padding-top: 15px;
+  position: relative;
+  border: 1px solid #eee;
+  z-index: 2
+}
+/* .appInfo .section .detail #detailChart #modal::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  z-index: 1
+} */
+.appInfo .section .detail #detailChart .error, .appInfo .section .detail #detailChart .loading{
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.appInfo .section .detail #detailChart .error div, .appInfo .section .detail #detailChart .loading div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.appInfo .section .detail #detailChart .error{
+  color: red
+}
+
+.appInfo .section ul li, .appInfo .section p { background: #fff; box-shadow: 0 0 5px #eee; padding: 20px; }
+.appInfo .section p{
+  box-shadow: none;
+  border-bottom: 1px solid #eee;
+}
+.appInfo .section ul li a{ text-decoration: underline; color: #666; padding:2px 5px; background: #eee; margin: 5px 0; display: inline-block;}
+.appInfo .section ul { display: flex; flex-direction: row; justify-content: space-around;  }
+.appInfo .section ul li { flex: 1; text-align: center;}
+.appInfo .section ul li b{ display: block; }
+.appInfo .nav-tabs{ margin-bottom: 15px; }
+.appInfo .nav-tabs li{ cursor: pointer; }
+.appInfo .nav-tabs li .active{ color: #0B8BEA; }
+.appInfo .btn-group button { padding: 2px 8px; }
+.appInfo .contracts{ display: none; }
+.submit-title {  }
+.submit-title h1 { font-size: 26px; text-align: center; display: block; height: 120px; line-height: 120px; width: 100%; }
+
+.submit-from {  }
+.submit-from span[id^='error']{ color: red; font-style: normal; }
+.submit-from span[id^='error'] strong { font-weight: normal; }
+.submit-from .from-body { margin: 0 auto; overflow: hidden; clear: both;}
+.submit-from .from-body .form-left{ float: left;}
+.submit-from .from-body .form-right{ float: right; }
+.submit-from .form-status {  overflow: hidden; overflow: hidden; }
+.submit-from .form-status .status{ width: 33%; height: 32px; line-height: 32px; float: left; font-size: 12px;
+  text-align: center; cursor: pointer; box-sizing: border-box; border: 1px solid transparent;
+}
+.submit-from .form-status .status:hover{ opacity: .7; }
+.submit-from .form-status .active{ border: 1px solid #333; }
+.submit-from .tagsContent { position: relative; }
+.submit-from .tagsContent .tagItem{
+  overflow: hidden; height: 22px; line-height: 22px; padding:0 6px; background: #eee; font-size: 12px; cursor: pointer;
+}
+.submit-from .tagsContent .tagResult, .submit-from .tagsContent .tagSource {overflow: hidden;}
+.submit-from .tagSource{
+  overflow: auto !important;
+  max-height: 120px !important;
+}
+.submit-from .tagsContent .tagResult .icon-CLOSE{font-size: 12px; padding-left: 5px;}
+.submit-from .tagsContent .tagResult .tagItem{ border: 1px solid #ccc; margin-right: 4px;}
+.submit-from .tagsContent .icon-add{ cursor: pointer; position: absolute; top: 6px; right: 10px; font-size: 18px; }
+.submit-from .tagsContent .tagItem:hover{opacity: .7;}
+.submit-from .errorlist li{color: red; font-size: 12px;}
+.submit-from .required{ color: red; padding-right: 5px;}
+
+.btn-showInfo{
+  cursor: pointer;
+}
+
+.form-horizontal {}
+.form-horizontal .inline{ display: inline; }
+.form-horizontal .social {  }
+.form-horizontal .social .inline{ display: inline-block; width: 32.5%}
+.form-horizontal .working-status {}
+.form-horizontal .working-status .inline input:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.form-horizontal .working-status .inline{
+  width: 32.5%;
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/*
+.live  已上线 182, 252, 148
+.beta Beta测试  255, 233, 82
+.prototype 原型验证 255, 186, 74
+.working 开发中 138, 195, 255
+.concept  概念 179, 145, 255
+.abandoned 废弃 245, 245, 245
+*/
+.statusModul{ }
+.statusModul .card{ background: rgba(0, 0, 0, .1) }
+.statusModul .status-content{ background: rgba(0, 0, 0, .3)}
+.statusModul .title { background: rgba(255, 255, 255, .3); border-bottom: .5rem solid rgba(255, 255, 255, 1);}
+.statusModul-color{background: rgba(0, 0, 0, 1)}
+
+
+.live .card{ background: rgba(182, 252, 148, .3) }
+.live .status-content{ background: rgba(182, 252, 148, 1)}
+.live .title { background: rgba(182, 252, 148, .3); border-bottom: .5rem solid rgba(182, 252, 148, 1);}
+.live-color{background: rgba(182, 252, 148, 1)}
+
+.beta .card{ background: rgba(255, 233, 82, .3) }
+.beta .status-content{ background: rgba(255, 233, 82, 1)}
+.beta .title { background: rgba(255, 233, 82, .3); border-bottom: .5rem solid rgba(255, 233, 82, 1);}
+.beta-color{background: rgba(255, 233, 82, 1)}
+
+.prototype .card{ background: rgba(255, 186, 74, .3) }
+.prototype .status-content{ background: rgba(255, 186, 74, 1)}
+.prototype .title { background: rgba(255, 186, 74, .3); border-bottom: .5rem solid rgba(255, 186, 74, 1);}
+.prototype-color{background: rgba(255, 186, 74, 1)}
+
+.working .card{ background: rgba(138, 195, 255, .3) }
+.working .status-content{ background: rgba(138, 195, 255, 1)}
+.working .title { background: rgba(138, 195, 255, .3); border-bottom: .5rem solid rgba(138, 195, 255, 1);}
+.working-color{background: rgba(138, 195, 255, 1)}
+
+.concept .card{ background: rgba(179, 145, 255, .3) }
+.concept .status-content{ background: rgba(179, 145, 255, 1)}
+.concept .title { background: rgba(179, 145, 255, .3); border-bottom: .5rem solid rgba(179, 145, 255, 1);}
+.concept-color{background: rgba(179, 145, 255, 1)}
+
+.abandoned .card{ background: rgba(245, 245, 245, .3) }
+.abandoned .status-content{ background: rgba(245, 245, 245, 1)}
+.abandoned .title { background: rgba(245, 245, 245, .3); border-bottom: .5rem solid rgba(245, 245, 245, 1);}
+.abandoned-color{background: rgba(245, 245, 245, 1)}
+
+.rightMenu{ position: fixed; top: 50%; right: 5px; z-index: 9999; }
+.rightMenu i{ font-size: 28px; cursor: pointer; color: #666; }
+.rightMenu i:hover{ color: #333; }
+.rightMenu li{position: relative; line-height: 28px; }
+.rightMenu li a{text-decoration: none; color: #212529 }
+.rightMenu span{
+  display: none;
+  top: -40px;
+  right: 32px;
+  position: absolute;
+}
+.rightMenu span img{ width: 120px; height: 120px; border: 1px solid #ccc; }
+.rightMenu li:hover span{ display: block;}
+
+.error_page {
+  text-align: center;
+}
+
+.loadMore{}
+.loadMore .btn{
+  cursor: default
+}
+.loadMore .btn, .loadMore .submit-myApp{
+  display: block; margin: 0 auto; margin-top: 15px;
+}
+
+
+.notDate{
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  font-size: 24px;
+}
