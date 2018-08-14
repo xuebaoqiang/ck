@@ -37,7 +37,7 @@
 				style="width: 100%">
 				<a href="ListHome.do" class="navbar-brand d-flex align-items-center">
 					<img class="logo" src="../static/images/logo.png"
-					title="dapp store" alt="logo">
+					title="dapp store" alt="logo"/>
 					<h1 style="display: none">全天链 - 区块链应用商店</h1> <strong>全天链 -
 						区块链应用商店</strong>
 				</a>
@@ -237,10 +237,10 @@
 	</script>
 	<script >
 	
-	if(${mapend.RowID}==${map.RowID}){
+	if(${mapend.RowID}>=${map.RowID}){
 		document.getElementById("end").href="/qtt-web-mall/home/GerGoDetails.do?id="+${mapstart.RowID}
 	}
-	if(${mapstart.RowID}==${map.RowID}){
+	if(${mapstart.RowID}<=${map.RowID}){
 		document.getElementById("sta").href="/qtt-web-mall/home/GerGoDetails.do?id="+${mapend.RowID}
 	}
 	if(${map.RowID} < ${mapend.RowID}){

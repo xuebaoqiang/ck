@@ -9,7 +9,7 @@ import java.io.Serializable;
  * 前台基础vo对象 ClassName: BaseResultVo
  * 
  * @Description: TODO
- * @author 吴澍(shu.wu@youyujinfu.com)
+ * @author 
  * @date 2015年11月21日上午10:52:02
  */
 public class BaseResultVo implements Serializable {

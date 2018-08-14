@@ -43,7 +43,7 @@
 				style="width: 100%">
 				<a href="ListHome.do" class="navbar-brand d-flex align-items-center">
 					<img class="logo" src="../static/images/logo.png"
-					title="dapp store" alt="logo">
+					title="dapp store" alt="logo"/>
 					<h1 style="display: none">全天链 - 区块链应用商店</h1> <strong>全天链 -
 						区块链应用商店</strong>
 				</a>
@@ -181,6 +181,7 @@
 			})();
 		</script>
 	</div>
+	<!-- 隐藏标签 -->
 	<script type="text/javascript">
 		$(document).ready(function(){
 		 	var IsFinished = $("#IsFinished").val();
@@ -190,6 +191,7 @@
 		});
 	</script>
 	
+	<!-- 查询 -->
 	<script type="text/javascript">
 		$("#button").click(function() {
 			$("#queryForm").submit();
@@ -221,7 +223,7 @@
       var url = window.location.search;
        var CurrentPage = $("#CurrentPage").val();
            CurrentPage++
-       var TotalPages = $("#TotalPages").val();   
+       var TotalPages = $("#TotalPages").val();
       	if(CurrentPage <= TotalPages){
       		if (url.match(/\?[^\?&]+/) != null){
       			var px = url.match(/\?[^\?&]+/)[0].substr(1);
@@ -232,7 +234,7 @@
       				document.location.href="/qtt-web-mall/home/ListHome.do?TxNum_Value=desc&&page="+CurrentPage;
       			}else if(px == "TxValue_Value=desc"){
       				document.location.href="/qtt-web-mall/home/ListHome.do?TxValue_Value=desc&&page="+CurrentPage;
-      			}else if(px == "page="+tobo){
+      			}else if(px == ("page="+tobo)){
       				document.location.href="/qtt-web-mall/home/ListHome.do?page="+CurrentPage;
       			}
       		}else{

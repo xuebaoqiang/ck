@@ -1,13 +1,13 @@
 package com.pojo;
 
 public class User {
-	private String sid;
+	private Long sid;
 	private String username;
 	private String password;
-	public String getSid() {
+	public Long getSid() {
 		return sid;
 	}
-	public void setSid(String sid) {
+	public void setSid(Long sid) {
 		this.sid = sid;
 	}
 	public String getUsername() {
@@ -27,5 +27,16 @@ public class User {
 		return "User [sid=" + sid + ", username=" + username + ", password="
 				+ password + "]";
 	}
+	public User(Long sid, String username, String password) {
+		super();
+		this.sid = sid;
+		this.username = username;
+		this.password = password;
+	}
+	public User() {
+		super();
+	}
+	
+	
 	
 }

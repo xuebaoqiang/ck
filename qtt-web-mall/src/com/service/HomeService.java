@@ -9,7 +9,7 @@ public interface HomeService {
 
 	public Map ListHome(String name, int page, int pageSize, String pV_VALUE, String txNum_Value, String txValue_Value, String Cname) throws Exception;
 
-	public void insertAPPlication(TableDapp tab) throws Exception;
+	public int insertAPPlication(TableDapp tab) throws Exception;
 
 	public List<Map<String, Object>> GetNumber();
 

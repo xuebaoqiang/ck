@@ -18,7 +18,7 @@ import com.utils.BaseResultVo;
  * 基础controller ClassName: BaseController
  * 
  * @Description: TODO
- * @author 吴澍(shu.wu@youyujinfu.com)
+ * @author 
  * @date 2015年11月21日上午10:51:26
  */
 public class BaseController {
@@ -37,7 +37,7 @@ public class BaseController {
 	 * @param @return
 	 * @return BaseResultVo
 	 * @throws @author
-	 *             吴澍(shu.wu@youyujinfu.com)
+	 *             
 	 * @date 2015年11月21日上午10:51:35
 	 */
 	protected BaseResultVo buildSuccessResultInfo(Object resultData) {
@@ -59,7 +59,7 @@ public class BaseController {
 	 * @param @return
 	 * @return BaseResultVo
 	 * @throws @author
-	 *             吴澍(shu.wu@youyujinfu.com)
+	 *             
 	 * @date 2015年11月21日上午10:51:42
 	 */
 	protected BaseResultVo buildFailedResultInfo(int resultCode, String failedMsg) {
@@ -106,7 +106,7 @@ public class BaseController {
 	 *            IOException
 	 * @return void
 	 * @throws @author
-	 *             吴澍(shu.wu@youyujinfu.com)
+	 *             
 	 * @date 2015年11月23日下午3:02:13
 	 */
 	protected void returnJson(BaseResultVo resultVo, HttpServletResponse response) throws IOException {

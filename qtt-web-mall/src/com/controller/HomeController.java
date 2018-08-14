@@ -20,7 +20,7 @@ import com.service.HomeService;
  * 
  * @ClassName: HomeController
  * @Description:TODO(这里用一句话描述这个类的作用)
- * @author: 薛宝强 (xuebaoqiang@qq.com)
+ * @author: 
  * @date: 2018年7月24日 上午11:29:43
  * 
  * @Copyright: 2018 www.qtt.com Inc. All rights reserved. 注意：本内容仅限于
@@ -42,7 +42,7 @@ public class HomeController extends BaseController {
 	 * 查询展示方法
 	 * @Title: ListHome   
 	 * @Description: TODO(这里用一句话描述这个方法的作用)   
-	 * @author: 薛宝强 (xuebaoqiang@qq.com)     
+	 * @author:   
 	 * @date:   2018年7月24日 上午11:29:59   
 	 * @param: @param model
 	 * @param: @return      
@@ -69,8 +69,8 @@ public class HomeController extends BaseController {
 	}
 
 	/**
-	 * 去添加页面 @Title: GoAdd @Description: TODO(这里用一句话描述这个方法的作用) @author: 薛宝强
-	 * (xuebaoqiang@qq.com) @date: 2018年7月25日 上午9:20:53 @param: @param
+	 * 去添加页面 @Title: GoAdd @Description: TODO(这里用一句话描述这个方法的作用) @author: 
+	 * @date: 2018年7月25日 上午9:20:53 @param: @param
 	 * model @param: @param request @param: @param
 	 * response @param: @return @return: String @throws
 	 */
@@ -85,22 +85,22 @@ public class HomeController extends BaseController {
 
 	/**
 	 * 添加 @Title: InsertApplication @Description: TODO(这里用一句话描述这个方法的作用) @author:
-	 * 薛宝强 (xuebaoqiang@qq.com) @date: 2018年7月25日 上午11:39:31 @param: @param
+	 *  @date: 2018年7月25日 上午11:39:31 @param: @param
 	 * model @param: @param request @param: @param response @param: @param
 	 * tab @param: @return @param: @throws Exception @return: String @throws
 	 */
 	@RequestMapping("/InsertApplication")
 	public void InsertApplication(ModelMap model, HttpServletRequest request, HttpServletResponse response,
 			TableDapp tab) throws Exception {
-		homeService.insertAPPlication(tab);
-
+		int i = homeService.insertAPPlication(tab);
+		this.returnJson(0, i, response);
 	}
 	
 	/**
 	 * 查询详情
 	 * @Title: GerGoDetails   
 	 * @Description: TODO(这里用一句话描述这个方法的作用)   
-	 * @author: 薛宝强 (xuebaoqiang@qq.com)     
+	 * @author:    
 	 * @date:   2018年8月1日 上午9:50:36   
 	 * @param: @param model
 	 * @param: @param request
@@ -113,9 +113,13 @@ public class HomeController extends BaseController {
 	 */
 	@RequestMapping("/GerGoDetails")
 	public String GerGoDetails(ModelMap model,HttpServletRequest request, HttpServletResponse response,int id)throws Exception{
-		Map<String,Object> map = homeService.GerGoDetails(id);
 		Map<String,Object> mapstart = homeService.getStart();
 		Map<String,Object> mapend = homeService.getEnd();
+		int mid = Integer.parseInt(mapend.get("RowID").toString());
+		if(id > mid){
+			 id = mid;
+		}
+		Map<String,Object> map = homeService.GerGoDetails(id);
 		model.put("map", map);
 		model.put("mapstart", mapstart);
 		model.put("mapend", mapend);

@@ -54,22 +54,28 @@ public class HomeDaoImpl implements HomeDao {
 		}
 		
 		if (Cname == "" || Cname == null) {
-			sql += "";
+			
+			if (pV_VALUE == "" || pV_VALUE == null) {
+				
+				if (txNum_Value == "" || txNum_Value == null) {
+					
+					sql += "";
+				} else {
+					
+					sql += " order by TxNum_Value desc";
+				}
+				
+			} else {
+				sql += " order by PV_VALUE desc";
+			}
+			
 		} else {
 			sql += " and ClassName like '%" + Cname + "%' ";
 		}
 
-		if (pV_VALUE == "" || pV_VALUE == null) {
-			sql += "";
-		} else {
-			sql += " order by PV_VALUE desc";
-		}
+		
 
-		if (txNum_Value == "" || txNum_Value == null) {
-			sql += "";
-		} else {
-			sql += " order by TxNum_Value desc";
-		}
+		
 
 		if (txValue_Value == "" || txValue_Value == null) {
 			sql += "";
@@ -109,10 +115,12 @@ public class HomeDaoImpl implements HomeDao {
 	 * </p>
 	 * 
 	 * @param tab
+	 * @return 
 	 * @throws Exception
 	 * @see com.dao.HomeDao#insertAPPlication(com.pojo.TableDapp)
 	 */
-	public void insertAPPlication(TableDapp tab) throws Exception {
+	public int insertAPPlication(TableDapp tab) throws Exception {
+		int i = 0;
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 		String date = df.format(new Date());
@@ -143,8 +151,9 @@ public class HomeDaoImpl implements HomeDao {
 			String addInfo = "insert into table_info(DappId,DappName,DappInsertTime) values("+id+",'"+tab.getDappname()+"','"+dateform+"')";
 			//System.out.println(addInfo);
 			jdbcTemplate.update(addInfo);
-			
+			i = 1;
 		}
+		return i;
 
 	}
 

@@ -27,8 +27,9 @@ public class HomeServiceImpl implements HomeService {
 
 
 	@Override
-	public void insertAPPlication(TableDapp tab) throws Exception {
-		homeDao.insertAPPlication(tab);
+	public int insertAPPlication(TableDapp tab) throws Exception {
+	
+		return 	homeDao.insertAPPlication(tab);
 	}
 
 

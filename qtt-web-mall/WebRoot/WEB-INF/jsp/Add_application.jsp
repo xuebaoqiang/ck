@@ -40,7 +40,7 @@
 				style="width: 100%">
 				<a href="ListHome.do" class="navbar-brand d-flex align-items-center">
 					<img class="logo" src="../static/images/logo.png"
-					title="dapp store" alt="logo">
+					title="dapp store" alt="logo"/>
 					<h1 style="display: none">全天链 - 区块链应用商店</h1> <strong>全天链 -
 						区块链应用商店</strong>
 				</a>
@@ -82,8 +82,6 @@
 		<div class="row">
 			<form method="post" novalidate=""
 				class="col-md-12 col-sm-12 from-body">
-				<input type="hidden" name="csrfmiddlewaretoken"
-					value="dNQvS97KXleBYog5dzB3AL4z3qdcvXAG24ZbDpRpFqd41rpWZMMPVbwuaUSC75rt">
 				<div class="col-md-12 col-sm-12 from-body">
 
 					<div class="col-md-6 form-left">
@@ -127,7 +125,7 @@
 
 						</div>
 						<div class="form-group ">
-							<label class="control-label ">应用地址</label> <input type="url"
+							<span class="required">*</span><label class="control-label ">应用地址</label> <input type="url"
 								name="dappaddress" maxlength="100" class="urlinput form-control"
 								id="dappaddress">
 
@@ -136,6 +134,12 @@
 							<label class="control-label ">微博</label> <input type="text"
 								name="dappweibo" maxlength="100"
 								class="textinput textInput form-control" id="dappweibo">
+
+						</div>
+						<div class="form-group ">
+							<label class="control-label ">微信</label> <input type="text"
+								name="ddappwechat" maxlength="100"
+								class="textinput textInput form-control" id="ddappwechat">
 
 						</div>
 						<div class="form-group ">
@@ -311,6 +315,10 @@
 				return;
 			}
 			var dappaddress = $("#dappaddress").val(); //合约地址
+			if(dappaddress == null || dappaddress == ""){
+				alert("请输入应用地址!");
+				return;
+			}
 			var dappweibo = $("#dappweibo").val(); //微博信息
 			var dapptelegram = $("#dapptelegram").val(); //TELEGRAM信息
 			var ddappwechat = $("#ddappwechat").val(); //微信信息
@@ -342,9 +350,14 @@
 			$.ajax({
 				url : "InsertApplication.do",
 				data : data,
-				type : "post",
-				dataType : "text",
-				success : function(data) {},
+				type : "get",
+				dataType : "json",
+				success : function(data) {
+					if(data.resultVo.resultData == 1){
+						alert("添加成功!");
+						document.location.href="/qtt-web-mall/home/ListHome.do"
+					}
+				},
 				error : function(err) {}
 			})
 		}
